@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.List;  
   
 /** 
- * Created by CXC on 2017/6/5. 
+ * 通用文本操作类，可用于创建、读取、写入 各种配置文件、日志文件等
  */  
 public class Log_Exception {  
     /** 

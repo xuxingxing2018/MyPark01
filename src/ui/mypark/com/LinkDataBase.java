@@ -28,7 +28,9 @@ public class LinkDataBase extends JPanel{
 	private String ms3;
 	private String ms4;
 	DataBase db = new DataBase();
-	public LinkDataBase(JFrame jf) {
+	
+	public LinkDataBase(JFrame jf, mainJFrameUi mainJFrame) {
+		
 		Log_Exception le=new Log_Exception();
 		try { //尝试读取配置文件
 			ms1 = le.readDat_from_txt(mainJFrameUi.DBConfigPath, 3); 
@@ -74,7 +76,8 @@ public class LinkDataBase extends JPanel{
 		ceshi.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.print("点击了按钮呢");
+            	mainJFrameUi a = mainJFrame;
+            	System.out.print("点击了按钮呢");
                 // JOptionPane.showConfirmDialog(null, "这是内容3", "这是标题3", JOptionPane.YES_NO_OPTION);
         		db.testDataBase(jf2.getText());
         		List<List<Object>> x = db.getData(jf2.getText(), "select Name from SystemUser");
@@ -86,6 +89,7 @@ public class LinkDataBase extends JPanel{
         		} else {
         			System.out.println("测试连接数据库失败！！！");
         		}
+        		a.setButtonView();
             }           
         });
 	}

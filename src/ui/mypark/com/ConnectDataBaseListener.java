@@ -9,9 +9,13 @@ import javax.swing.JFrame;
 
 public class ConnectDataBaseListener  implements ActionListener {
 	private JFrame databaseJFrame = new JFrame();
+	private mainJFrameUi a = null;
+	public ConnectDataBaseListener(mainJFrameUi mainJFrame) {
+		this.a = mainJFrame;
+	}
 	public void actionPerformed(ActionEvent e) {
 		//List<List<Object>> x = DataBase.getData("MyPark01", "select FILE_NAME from FILES");
-		LinkDataBase link = new LinkDataBase(databaseJFrame);
+		LinkDataBase link = new LinkDataBase(databaseJFrame, a);
     	
 		databaseJFrame.add(link);
 		databaseJFrame.pack();
